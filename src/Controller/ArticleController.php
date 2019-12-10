@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 
+use App\CRUD\Blog\ArticleCRUD;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,19 +16,19 @@ use Symfony\Component\Routing\Annotation\Route;
 class ArticleController extends AbstractController
 {
     /**
+     * @param ArticleCRUD $articleCRUD
      * @param $id
-     * @param Request $request
      * @return Response
      * @Route("/blog/article/id/{id}", name="show_article_by_id")
      */
-    public function showOneById(int $id, Request $request)
+    public function showOneById(ArticleCRUD $articleCRUD, $id)
     {
-        $response=new Response();
-        $content="<html><body>Article id=$id</body></html>";
-        $response->setContent($content);
-        $response->setStatusCode(200);
+        /**
+         * @var Article $article
+         */
+        $article = $articleCRUD->getOneById($id);
 
-        return $response;
+        return $this->render('blog/articles/one.html.twig', ['article'=>$article]);
 
     }
 
@@ -36,14 +37,11 @@ class ArticleController extends AbstractController
      * @return Response
      * @Route("/blog/article", name="show_all_articles")
      */
-    public function showAll(Request $request)
+    public function showAll(ArticleCRUD $articleCRUD)
     {
-        $response= new response();
-        $content="<html><body>Liste de tous les articles</body></html>";
-        $response->setContent($content);
-        $response->setStatusCode(200);
+        $articles=$articleCRUD->getAll();
 
-        return $response;
+        return $this->render('blog/articles/all.html.twig', ['articles'=>$articles]);
     }
 
     /**
@@ -53,12 +51,7 @@ class ArticleController extends AbstractController
      */
     public function createArticle(Request $request)
     {
-        $response=new response();
-        $content="<html><body>Ici on est dans créer un article</body></html>";
-        $response->setContent($content);
-        $response->setStatusCode(200);
-
-        return $response;
+        return $this->render('blog/articles/create.html.twig');
     }
 
     /**
@@ -68,12 +61,7 @@ class ArticleController extends AbstractController
      */
     public function editArticle(Request $response)
     {
-        $response=new response();
-        $content="<html><body>Ici on peut modifier un article</body></html>";
-        $response->setContent($content);
-        $response->setStatusCode(200);
-
-        return $response;
+        return $this->render('blog/articles/edit.html.twig');
     }
 
     /**
@@ -83,11 +71,6 @@ class ArticleController extends AbstractController
      */
     public function deleteArticle(Request $response)
     {
-        $response=new response();
-        $content="<html><body>Ici on supprime des articles</body></html>";
-        $response->setContent($content);
-        $response->setStatusCode(200);
-
-        return $response;
+        return $this->render('blog/articles/delete.html.twig');
     }
 }

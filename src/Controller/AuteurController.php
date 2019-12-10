@@ -18,8 +18,8 @@ class AuteurController extends AbstractController
      */
     public function showOneAuthorById(int $id)
     {
-        return  new Response("auteur id:$id",200);
-}
+        return  $this->render('blog/author/one.html.twig',['id'=>$id]);
+    }
 
     /**
      * @return Response
@@ -27,7 +27,7 @@ class AuteurController extends AbstractController
      */
     public function showAllAutor()
     {
-        return new Response("Tous les auteurs",200);
+        return $this->render('blog/author/all.html.twig');
     }
 
     /**
@@ -36,7 +36,7 @@ class AuteurController extends AbstractController
      */
     public function createAuthor()
     {
-        return new Response("Créer un auteur ici", 200);
+        return $this->render('blog/author/create.html.twig');
     }
 
     /**
@@ -45,7 +45,7 @@ class AuteurController extends AbstractController
      */
     public function editAuthor()
     {
-        return new Response("Ici on modifie les auteurs",200);
+        return $this->render('blog/author/edit.html.twig');
     }
 
     /**
@@ -54,7 +54,7 @@ class AuteurController extends AbstractController
      */
     public function deleteAuthor()
     {
-        return new Response("ici on supprime les auteurs!", 200);
+        return $this->render('blog/author/delete.html.twig');
     }
 
 

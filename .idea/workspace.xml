@@ -2,11 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47ff6865-26ed-4ab8-ac7f-7927a359c3ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/AuteurController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CRUD/Blog/ArticleCRUD.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Auteur.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191210094229.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191210161548.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/blog/articles/all.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/blog/articles/create.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/blog/articles/delete.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/blog/articles/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/blog/articles/one.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/blog/author/all.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/blog/author/create.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/blog/author/delete.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/blog/author/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/blog/author/one.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/menu/menu.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Test.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AuteurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AuteurController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,6 +154,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -183,6 +201,9 @@
       <workItem from="1575557776708" duration="4805000" />
       <workItem from="1575620994836" duration="7951000" />
       <workItem from="1575639785620" duration="7905000" />
+      <workItem from="1575881754765" duration="13917000" />
+      <workItem from="1575907967156" duration="4453000" />
+      <workItem from="1575966368782" duration="19483000" />
     </task>
     <servers />
   </component>
@@ -193,6 +214,14 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="301" y="195" key="IDE.errors.dialog" timestamp="1575991258242">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="301" y="195" key="IDE.errors.dialog/0.0.1440.920@0.0.1440.920" timestamp="1575991258242" />
+    <state x="557" y="384" key="NewPhpFileDialog" timestamp="1575991432848">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="557" y="384" key="NewPhpFileDialog/0.0.1440.920@0.0.1440.920" timestamp="1575991432848" />
     <state x="222" y="103" key="SettingsEditor" timestamp="1575557588100">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
