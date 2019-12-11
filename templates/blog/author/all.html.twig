@@ -3,4 +3,15 @@
 
 {% block title %}Auteurs{% endblock %}
 
-{% block content %}Je suis dans tous les auteurs{% endblock %}
+{% block content %}
+    <pre>
+    <ul>
+        {% for auteur in auteurs %}
+            <li> {{ auteur.id  }}</li>
+            <li>{{ auteur.firstname }}</li>
+            <li>{{ auteur.lastname }}</li>
+
+        {% endfor %}
+    </ul>
+    </pre>
+{% endblock %}

@@ -25,7 +25,7 @@ class Auteur
      */
     private $firstname;
     /**
-     * @ORM\Column(name="content",type="string",nullable=false)
+     * @ORM\Column(name="lastname",type="string",nullable=false)
      * @var string
      */
     private $lastname;

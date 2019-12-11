@@ -1,3 +1,7 @@
 {% extends 'base.html.twig' %}
-{% block title %}Auteur id:{{ id }}{% endblock %}
-{% block content %}je suis dans un auteur id:{{ id }}{% endblock %}
+{% block title %}Auteur id:{{ auteur.id }}{% endblock %}
+{% block content %}
+    {{ auteur.id }}
+    {{ auteur.firstname }}
+    {{ auteur.lastname }}
+{% endblock %}

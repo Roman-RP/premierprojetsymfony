@@ -1,6 +1,12 @@
 <?php
+
 namespace App\Controller;
 
+
+use App\CRUD\Blog\AuteurCRUD;
+use App\Entity\Auteur;
+use App\Form\Blog\AuteurFormType;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -12,31 +18,69 @@ use Symfony\Component\Routing\Annotation\Route;
 class AuteurController extends AbstractController
 {
     /**
+     * @param AuteurCRUD $auteurCRUD
      * @param $id
      * @return Response
      * @Route("/blog/auteur/id/{id}", name="show_author_by_id")
      */
-    public function showOneAuthorById(int $id)
+    public function showOneById(AuteurCRUD $auteurCRUD, $id)
     {
-        return  $this->render('blog/author/one.html.twig',['id'=>$id]);
+        /**
+         * @var Auteur $auteur
+         */
+        $auteur = $auteurCRUD->getOneById($id);
+
+        return $this->render('blog/author/one.html.twig', ['auteur' => $auteur]);
     }
 
     /**
+     * @param AuteurCRUD $auteurCRUD
      * @return Response
      * @Route("/blog/auteur", name="show_all_author")
      */
-    public function showAllAutor()
+    public function showAllAuthor(AuteurCRUD $auteurCRUD)
     {
-        return $this->render('blog/author/all.html.twig');
+        $auteurs = $auteurCRUD->getAll();
+        return $this->render('blog/author/all.html.twig', ['auteurs' => $auteurs]);
     }
 
+
     /**
+     * @param Request $request
+     * @param AuteurCRUD $auteurCRUD
      * @return Response
      * @Route("/blog/auteur/create", name="create_author")
      */
-    public function createAuthor()
+    public function createAuthor(
+        Request $request,
+        AuteurCRUD $auteurCRUD
+    )
     {
-        return $this->render('blog/author/create.html.twig');
+        //create empty auteur
+        $auteur = new Auteur();
+
+        //create form
+        $form = $this->createForm(
+            AuteurFormType::class,
+            $auteur
+        );
+
+        //Handle form = submit
+        $form->handleRequest($request);
+
+        //treat submitted form
+        if ($form->isSubmitted() && $form->isValid()) {
+            //Persist
+            $auteurCRUD->add($auteur);
+
+            //redirect
+            return $this->redirectToRoute('show_all_author');
+        }
+        //create and return template
+        return $this->render('blog/author/create.html.twig',
+            [
+                'auteurForm' => $form->createView()
+            ]);
     }
 
     /**
