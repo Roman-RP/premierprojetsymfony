@@ -129,14 +129,22 @@ class ArticleController extends AbstractController
     }
 
 
-
     /**
-     * @param Request $response
-     * @return Request|Response
-     * @Route("/blog/article/delete",name="delete_article")
+     * @param ArticleCRUD $articleCRUD
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @Route("/blog/article/delete/{id}",name="delete_article")
      */
-    public function deleteArticle(Request $response)
+    public function deleteArticle(ArticleCRUD $articleCRUD, $id)
     {
-        return $this->render('blog/articles/delete.html.twig');
+        // get article
+        $article = $articleCRUD->getOneById($id);
+
+        //Delete
+        $articleCRUD->delete($article);
+
+        // redirect
+        return $this->redirectToRoute('show_all_articles');
+
     }
 }

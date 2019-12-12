@@ -1,8 +1,30 @@
 {% extends 'base.html.twig' %}
 {% block title %}Articles id:{{ article.id }}{% endblock %}
 {% block content %}
-    {{ article.id }}
-    {{ article.title }}
-    {{ article.content }}
-    {{ article.date | date("d/m/y - H:i:s")}}
+    <div class="row m-0">
+            <div class="col-lg-12 col-sm-10 mx-auto mb-2 h-50 mt-3" >
+                <div class="card" style=" height: auto">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h3 class="text-center ">{{ article.title }} </h3>
+                        </div>
+                        <div class="card-subtitle">
+                            <p class="text-muted lead overflow-hidden" style="height: auto; overflow: hidden">
+                                {{ article.content }}
+                            </p>
+                        </div>
+
+                        <div class=" row text-muted d-flex justify-content-between m-1">
+                            <p>{{ article.date | date('d/m/y à H:i') }}</p>
+                            <p class="text-left">{{ article.auteur.firstname }} {{ article.auteur.lastname }}</p>
+                        </div>
+                        <div class="text-center">
+                            <a href="{{ path('edit_article',{'id':article.id })}}"> <button type="button" class="btn btn-primary">Modifier l'article</button></a>
+                            <a href="{{ path('delete_article',{'id':article.id })}}"> <button type="button" class="btn btn-danger">Supprimer l'article</button></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    </div>
 {% endblock %}

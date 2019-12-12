@@ -2,16 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47ff6865-26ed-4ab8-ac7f-7927a359c3ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Form/Blog/ArticleFormType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191212110919.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Security/AppCustomAuthenticator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Blog/ArticleCRUDTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AuteurController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AuteurController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/blog/articles/all.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/articles/all.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/articles/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/articles/create.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/articles/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/articles/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/author/all.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/author/all.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/author/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/author/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blog/articles/one.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/articles/one.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/menu/menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu/menu.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -196,7 +201,7 @@
       <workItem from="1576052827698" duration="7008000" />
       <workItem from="1576067921941" duration="145000" />
       <workItem from="1576068232607" duration="17304000" />
-      <workItem from="1576138761149" duration="487000" />
+      <workItem from="1576138761149" duration="18856000" />
     </task>
     <servers />
   </component>
@@ -207,18 +212,18 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="451" y="215" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1576082729892">
+    <state x="451" y="215" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1576154809793">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state x="451" y="215" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.920@0.0.1440.920" timestamp="1576082729892" />
+    <state x="451" y="215" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.920@0.0.1440.920" timestamp="1576154809793" />
     <state x="301" y="195" key="IDE.errors.dialog" timestamp="1575991258242">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
     <state x="301" y="195" key="IDE.errors.dialog/0.0.1440.920@0.0.1440.920" timestamp="1575991258242" />
-    <state x="557" y="384" key="NewPhpFileDialog" timestamp="1576077427132">
+    <state x="557" y="384" key="NewPhpFileDialog" timestamp="1576163363829">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
-    <state x="557" y="384" key="NewPhpFileDialog/0.0.1440.920@0.0.1440.920" timestamp="1576077427132" />
+    <state x="557" y="384" key="NewPhpFileDialog/0.0.1440.920@0.0.1440.920" timestamp="1576163363829" />
     <state x="222" y="103" key="SettingsEditor" timestamp="1575557588100">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
