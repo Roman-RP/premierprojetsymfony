@@ -83,22 +83,62 @@ class AuteurController extends AbstractController
             ]);
     }
 
-    /**
-     * @return Response
-     * @Route("/blog/auteur/edit", name="edit_author")
-     */
-    public function editAuthor()
-    {
-        return $this->render('blog/author/edit.html.twig');
-    }
 
     /**
-     * @return Response
-     * @Route("/blog/auteur/delete",name="delete_author")
+     * @param AuteurCRUD $auteurCRUD
+     * @param Request $request
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     * @Route("/blog/auteur/edit/{id}", name="edit_author")
      */
-    public function deleteAuthor()
+    public function editAuthor(AuteurCRUD $auteurCRUD, Request $request, $id)
     {
-        return $this->render('blog/author/delete.html.twig');
+        // Get auteur
+        $auteur = $auteurCRUD->getOneById($id);
+
+        //create form
+        $form = $this->createForm(
+            AuteurFormType::class,
+            $auteur
+        );
+
+        //Handle form = submit
+        $form->handleRequest($request);
+
+        //treat submitted form
+        if ($form->isSubmitted() && $form->isValid()) {
+            //Persist
+            $auteurCRUD->update($auteur);
+
+            //redirect
+            return $this->redirectToRoute('show_author_by_id', ['id' => $id]);
+        }
+        //create and return template
+        return $this->render('blog/author/edit.html.twig',
+            [
+                'auteurForm' => $form->createView()
+            ]);
+
+    }
+
+
+    /**
+     * @param AuteurCRUD $auteurCRUD
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     *@Route("/blog/auteur/delete/{id}",name="delete_author")
+     */
+    public function deleteAuthor(AuteurCRUD $auteurCRUD, $id)
+    {
+        // get auteur
+        $auteur = $auteurCRUD->getOneById($id);
+
+        //Delete
+        $auteurCRUD->delete($auteur);
+
+        // redirect
+        return $this->redirectToRoute('show_all_author');
+
     }
 
 

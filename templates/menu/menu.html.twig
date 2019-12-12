@@ -1,18 +1,22 @@
 <head>
-    <ul>
-        <li>
-            <a href="{{ path('show_all_articles') }}">Articles</a>
-            <ul>
-                <li><a href="{{ path('create_article') }}">Create article</a></li>
-
-            </ul>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark d-flex">
+    <span class="navbar-text flex-grow-1 ">
+    Mon petit blog
+  </span>
+    <!-- Links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('show_all_articles') }}">Articles</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('create_article') }}">Create article</a>
         </li>
         <li>
-            <a href="{{ path('show_all_author') }}">Auteurs</a>
-            <ul>
-                <li><a href="{{ path('create_author') }}">Create Auteur</a></li>
-
-            </ul>
+            <a class="nav-link" href="{{ path('show_all_author') }}">Auteurs</a>
+        </li>
+        <li>
+            <a class="nav-link" href="{{ path('create_author') }}">Create Auteur</a>
         </li>
     </ul>
+</nav>
 </head>

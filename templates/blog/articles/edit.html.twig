@@ -1,3 +1,6 @@
 {% extends 'base.html.twig' %}
-{% block title %}Edit article{% endblock %}
-{% block content %}je suis dans edit article{% endblock %}
+{% block title %}Modifier un Article{% endblock %}
+{% block content %}
+    <h1>Modifier un Article:</h1>
+    {{ form(articleForm) }}
+{% endblock %}

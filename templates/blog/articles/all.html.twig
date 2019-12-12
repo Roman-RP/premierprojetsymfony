@@ -4,12 +4,34 @@
 
 {% block content %}
 
-<ul>
+    <div class="row">
     {% for article in articles %}
-    <li> {{ article.id }}</li>
-    <li>{{ article.title }}</li>
-    <li>{{ article.content }}</li>
+        <div class="col-lg-4 col-sm-10 mx-auto mb-2 h-50">
+            <div class="card ">
+                <div class="card-body">
+                    <div class="card-tile">
+                        <h3 class="text-center ">{{ article.title }} </h3>
+                    </div>
+                    <div class="card-subtitle">
+                        <p class="text-muted lead">
+                            {{ article.content }}
+                        </p>
+                    </div>
+                    <div class=" row text-muted d-flex justify-content-between m-1">
+                        <p>{{ article.date | date('d/m/y à H:i') }}</p>
+                        <p class="text-left">{{ article.auteur.firstname }} {{ article.auteur.lastname }}</p>
+                    </div>
+                    <div class="text-center">
 
+                        <a href="{{ path('show_article_by_id',{'id':article.id })}}"> <button type="button" class="btn btn-primary">Lire l'article</button></a>
+
+                        <a href="#"
+                        ><i class="fab fa-youtube fa-2x mx-2 text-danger"></i
+                            ></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     {% endfor %}
-</ul>
+    </div>
 {% endblock %}

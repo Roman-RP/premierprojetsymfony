@@ -1,7 +1,10 @@
 <?php
+
 namespace App\Controller;
 
 use App\CRUD\Blog\ArticleCRUD;
+use App\Entity\Article;
+use App\Form\Blog\ArticleFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -28,7 +31,7 @@ class ArticleController extends AbstractController
          */
         $article = $articleCRUD->getOneById($id);
 
-        return $this->render('blog/articles/one.html.twig', ['article'=>$article]);
+        return $this->render('blog/articles/one.html.twig', ['article' => $article]);
 
     }
 
@@ -39,30 +42,93 @@ class ArticleController extends AbstractController
      */
     public function showAll(ArticleCRUD $articleCRUD)
     {
-        $articles=$articleCRUD->getAll();
+        $articles = $articleCRUD->getAll();
 
-        return $this->render('blog/articles/all.html.twig', ['articles'=>$articles]);
+        return $this->render('blog/articles/all.html.twig', ['articles' => $articles]);
     }
+
 
     /**
      * @param Request $request
-     * @return Response
+     * @param ArticleCRUD $articleCRUD
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      * @Route("blog/article/create", name="create_article")
      */
-    public function createArticle(Request $request)
+    public function createArticle(
+        Request $request,
+        ArticleCRUD $articleCRUD)
     {
-        return $this->render('blog/articles/create.html.twig');
+        //create empty article
+        $article = new Article();
+
+        //create form
+        $form = $this->createForm(
+            ArticleFormType::class,
+            $article
+        );
+
+        //Handle form = submit
+        $form->handleRequest($request);
+
+        //treat submitted form
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $date=new \DateTime('now');
+            $date->setTimezone(new \DateTimeZone('Europe/Paris'));
+            $article->setDate($date);
+            //Persist
+            $articleCRUD->add($article);
+
+            //redirect
+            return $this->redirectToRoute('show_all_articles');
+        }
+        //create and return template
+        return $this->render('blog/articles/create.html.twig',
+            [
+                'articleForm' => $form->createView()
+            ]);
+
     }
 
+
     /**
-     * @param Request $response
-     * @return Response
-     * @Route("/blog/article/edit", name="edit_article")
+     * @param \App\Controller\ArticleCRUD $articleCRUD
+     * @param Request $request
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     * @Route("/blog/article/edit/{id}", name="edit_article")
      */
-    public function editArticle(Request $response)
+        public function editArticle(ArticleCRUD $articleCRUD, Request $request, $id)
     {
-        return $this->render('blog/articles/edit.html.twig');
+        // Get article
+        $article = $articleCRUD->getOneById($id);
+
+        //create form
+        $form = $this->createForm(
+            ArticleFormType::class,
+            $article
+        );
+
+        //Handle form = submit
+        $form->handleRequest($request);
+
+        //treat submitted form
+        if ($form->isSubmitted() && $form->isValid()) {
+            //Persist
+            $articleCRUD->update($article);
+
+            //redirect
+            return $this->redirectToRoute('show_article_by_id', ['id' => $id]);
+        }
+        //create and return template
+        return $this->render('blog/articles/edit.html.twig',
+            [
+                'articleForm' => $form->createView()
+            ]);
+
     }
+
+
 
     /**
      * @param Request $response
