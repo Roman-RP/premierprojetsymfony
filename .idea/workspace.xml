@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47ff6865-26ed-4ab8-ac7f-7927a359c3ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191212110919.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Security/AppCustomAuthenticator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Blog/ArticleCRUDTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/articles/all.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/articles/all.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/articles/one.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/articles/one.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/menu/menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu/menu.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,6 +187,10 @@
       <workItem from="1576067921941" duration="145000" />
       <workItem from="1576068232607" duration="17304000" />
       <workItem from="1576138761149" duration="18856000" />
+      <workItem from="1576227679914" duration="746000" />
+      <workItem from="1576250779411" duration="1511000" />
+      <workItem from="1576259281886" duration="709000" />
+      <workItem from="1576417292510" duration="130000" />
     </task>
     <servers />
   </component>
